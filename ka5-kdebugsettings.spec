@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kdebugsettings
 Summary:	Kdebugettings
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	3d205da2843c4edff2c9e37f1ee8fae0
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	61b3c144210163f74a665289a9a9cfaa
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -58,9 +58,15 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-/etc/xdg/kde.categories
-/etc/xdg/kde.renamecategories
 %attr(755,root,root) %{_bindir}/kdebugsettings
 %{_desktopdir}/org.kde.kdebugsettings.desktop
+%{_datadir}/qlogging-categories5/kde.renamecategories
+%{_datadir}/qlogging-categories5/kdebugsettings.categories
+%attr(755,root,root) %{_libdir}/libkdebugsettings.so.20.*.*
+%{_libdir}/libkdebugsettings.so.5
+%{_datadir}/metainfo/org.kde.kdebugsettings.appdata.xml
