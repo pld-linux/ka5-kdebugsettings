@@ -1,15 +1,15 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kdebugsettings
 Summary:	Kdebugettings
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	61b3c144210163f74a665289a9a9cfaa
+# Source0-md5:	533a74804cfc8eef83e0cc9afaaba6b2
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -67,6 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/org.kde.kdebugsettings.desktop
 %{_datadir}/qlogging-categories5/kde.renamecategories
 %{_datadir}/qlogging-categories5/kdebugsettings.categories
-%attr(755,root,root) %{_libdir}/libkdebugsettings.so.20.*.*
+%attr(755,root,root) %{_libdir}/libkdebugsettings.so.*.*.*
 %{_libdir}/libkdebugsettings.so.5
 %{_datadir}/metainfo/org.kde.kdebugsettings.appdata.xml
+%{_datadir}/kdebugsettings/groups
