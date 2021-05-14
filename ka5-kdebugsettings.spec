@@ -5,7 +5,7 @@
 Summary:	Kdebugettings
 Name:		ka5-%{kaname}
 Version:	21.04.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -70,4 +70,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkdebugsettings.so.*.*.*
 %{_libdir}/libkdebugsettings.so.5
 %{_datadir}/metainfo/org.kde.kdebugsettings.appdata.xml
-%{_datadir}/kdebugsettings/groups
+%{_datadir}/kdebugsettings
