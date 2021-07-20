@@ -36,6 +36,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 An application to enable/disable qCDebug.
 
+%description -l pl.UTF-8
+Program do włączania/wyłączania qCDebug.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
